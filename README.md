@@ -17,7 +17,7 @@ browsing behaviour in a session, whether the session ends in a purchase (**Buy =
 - **After preprocessing:** 19 input features, target renamed `class` (0 = No Buy, 1 = Buy)
 - **Class balance:** about 85% No Buy and 15% Buy (imbalanced)
 - **Problem type:** Binary classification
-- 
+  
 **Preprocessing steps**
 1. `Revenue` (False/True) converted to 0/1 and renamed `class`.
 2. `Month` names converted to numbers 1 to 12, `Weekend` converted to 0/1.
