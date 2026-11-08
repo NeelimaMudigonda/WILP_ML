@@ -32,17 +32,44 @@ VisitorType_Returning_Visitor, VisitorType_Other.
 
 
 ## c. GitHub repository
+ 
 Repository: https://github.com/NeelimaMudigonda/WILP_ML
-Streamlit app: https://NeelimaMudigonda.streamlit.app
-
+ 
+Streamlit app: https://neelimamudigonda.streamlit.app/
+ 
+**Repository structure**
+ 
+```
 WILP_ML/
-|-- app.py                 Streamlit app
-|-- my_models.py           From-scratch models, scaler and metrics
-|-- model_training.ipynb   Training and evaluation notebook
-|-- requirements.txt
-|-- test_data.csv          Test set (599 rows) for the app
-|-- .streamlit/config.toml
-|-- model/                 Saved models, scaler, results.csv, confusion_matrices.png
+|-- .streamlit/
+|   |-- config.toml                 Streamlit theme and settings
+|-- model/
+|   |-- confusion_matrices.png      Confusion matrices of all five models
+|   |-- decision_tree.joblib        Saved Decision Tree
+|   |-- feature_columns.joblib      Feature column order
+|   |-- knn.joblib                  Saved KNN
+|   |-- logistic_regression.joblib  Saved Logistic Regression
+|   |-- naive_bayes.joblib          Saved Naive Bayes
+|   |-- results.csv                 Metrics table of all five models
+|   |-- scaler.joblib               Saved standardisation scaler
+|   |-- support_vector_machine.joblib  Saved SVM
+|-- README.md                       Project documentation
+|-- app.py                          Streamlit app
+|-- model_training.ipynb            Training and evaluation notebook
+|-- my_models.py                    From-scratch models, scaler and metrics
+|-- requirements.txt                Python dependencies
+|-- test_data.csv                   Test set (599 rows) for the app
+```
+ 
+| File / Folder | Purpose |
+|---|---|
+| `app.py` | Streamlit app: CSV upload, model dropdown, metrics, confusion matrix, comparison |
+| `my_models.py` | Five models, scaler and metric functions written from scratch with NumPy |
+| `model_training.ipynb` | Data loading, preprocessing, training, evaluation, confusion matrices |
+| `model/` | Trained models (`.joblib`), scaler, feature columns, `results.csv`, confusion matrix image |
+| `test_data.csv` | 599-row test set to upload in the app |
+| `requirements.txt` | Pinned package versions for deployment |
+| `.streamlit/config.toml` | Light theme and app settings |
 
 
 ## d. Models used
@@ -54,8 +81,6 @@ All metrics are calculated on the 599-row test set.
 | KNN | 0.8815 | 0.7981 | 0.7750 | 0.3333 | 0.4662 | 0.4578 |
 | Naive Bayes | 0.7546 | 0.8137 | 0.3500 | 0.6774 | 0.4615 | 0.3524 |
 | Support Vector Machine | 0.8948 | 0.8431 | 0.8000 | 0.4301 | 0.5594 | 0.5373 |
-**Settings:** Logistic Regression (learning rate 0.1, 2000 iterations), Decision Tree (Gini, max depth 6),
-KNN (k = 7, Euclidean distance), Gaussian Naive Bayes, SVM (linear kernel, hinge loss, lambda 0.01, 2000 iterations).
 
 
 ### Observations
@@ -74,11 +99,15 @@ Features: CSV upload (test data), model selection dropdown, six evaluation metri
 and classification report, comparison of all five models, and a Performance tab with the tables above.
 Models are loaded from `model/` and are **not retrained** on the uploaded data.
 
-
-## How to run locally
+## How to Run Locally
+1. Install the required dependencies:
+```
 pip install -r requirements.txt
+```
+2. Start the Streamlit application:
+```
 streamlit run app.py
-
+```
 
 ## Note on implementation
 All five models, the scaler, the train/test split and all six metrics are written from scratch with NumPy in `my_models.py` and the notebook.
