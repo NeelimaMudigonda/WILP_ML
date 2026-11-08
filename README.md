@@ -81,4 +81,4 @@ streamlit run app.py
 
 
 ## Note on implementation
-All five models, the scaler, the train/test split and all six metrics are written from scratch with NumPy in `my_models.py` and the notebook. 
+All five models, the scaler, the train/test split and all six metrics are written from scratch with NumPy in `my_models.py` and the notebook. '''
