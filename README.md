@@ -34,7 +34,7 @@ VisitorType_Returning_Visitor, VisitorType_Other.
 ## c. GitHub repository
 Repository: https://github.com/NeelimaMudigonda/WILP_ML
 Streamlit app: https://NeelimaMudigonda.streamlit.app
-```
+
 WILP_ML/
 |-- app.py                 Streamlit app
 |-- my_models.py           From-scratch models, scaler and metrics
@@ -81,4 +81,4 @@ streamlit run app.py
 
 
 ## Note on implementation
-All five models, the scaler, the train/test split and all six metrics are written from scratch with NumPy in `my_models.py` and the notebook. '''
+All five models, the scaler, the train/test split and all six metrics are written from scratch with NumPy in `my_models.py` and the notebook.
